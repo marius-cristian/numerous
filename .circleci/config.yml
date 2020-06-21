@@ -1,20 +1,16 @@
 version: 2.1
 
-orbs:
-  python: circleci/python@0.2.1
-
 jobs:
   build-and-test:
-    executor: python/default
-      docker:
-          - image: mariuscristian/numerous-requirements:1.0.0
-      steps:
-        - checkout
-        - run:
-          name: Tests
-          command: |
-            cp . numerous
-            python3 -m numerous/pytest
+    docker:
+        - image: mariuscristian/numerous-requirements:1.0.0
+    steps:
+      - checkout
+      - run:
+        name: Tests
+        command: |
+          cp . numerous
+          python3 -m numerous/pytest
 
 workflows:
   main:
