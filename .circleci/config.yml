@@ -3,10 +3,11 @@ jobs:
   build-and-test:
     docker:
         - image: mariuscristian/numerous-requirements:1.0.0
+
     steps:
       - checkout
       - run:
-        name: Tests
-        command: |
-          cp . numerous
-          python3 -m numerous/pytest
+          name: Tests
+          command: |
+            cp . numerous
+            python3 -m numerous/pytest
