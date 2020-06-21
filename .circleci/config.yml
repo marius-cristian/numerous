@@ -1,5 +1,4 @@
 version: 2.1
-
 jobs:
   build-and-test:
     docker:
@@ -11,8 +10,3 @@ jobs:
         command: |
           cp . numerous
           python3 -m numerous/pytest
-
-workflows:
-  main:
-    jobs:
-      - build-and-test
